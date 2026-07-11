@@ -5,6 +5,8 @@ on:
     pull_request:
         branches: ["main", "master"]
     
+permissions:
+    contents: write
 jobs:
     gen_mermaid:
         runs-on: ubuntu-latest

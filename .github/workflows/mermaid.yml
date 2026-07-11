@@ -1,9 +1,9 @@
 name: Generate Mermaid Diagrams
 on: 
     push:
-        branches: ["main"]
+        branches: ["main", "master"]
     pull_request:
-        branches: ["main"]
+        branches: ["main", "master"]
     
 jobs:
     gen_mermaid:

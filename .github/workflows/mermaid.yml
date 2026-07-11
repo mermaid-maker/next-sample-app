@@ -1,0 +1,14 @@
+name: Generate Mermaid Diagrams
+on: 
+    push:
+        branches: ["main"]
+    pull_request:
+        branches: ["main"]
+    
+jobs:
+    gen_mermaid:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: "mermaid-maker/action@main"
+              with:
+                input_dir: "./public/mermaid_diagrams"

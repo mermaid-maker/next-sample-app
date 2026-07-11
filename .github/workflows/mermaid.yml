@@ -7,6 +7,7 @@ on:
     
 permissions:
     contents: write
+
 jobs:
     gen_mermaid:
         runs-on: ubuntu-latest

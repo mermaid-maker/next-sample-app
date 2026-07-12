@@ -43,6 +43,10 @@ jobs:
         with:
           node-version: "24"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v6.0.9
+        with: 
+          version: 11
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
@@ -63,6 +67,10 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
+      - name: Generate mermaid diagrams
+        uses: mermaid-maker/action@main
+        with:
+          pkg_manager: pnpm
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
       - name: Upload artifact

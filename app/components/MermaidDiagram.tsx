@@ -14,7 +14,7 @@ export async function MermaidDiagram({chart}: {chart: string}){
     }
 
     return (
-    <div className="*:w-full">
+    <div>
         {MermaidDiagram}
     </div>)
 }

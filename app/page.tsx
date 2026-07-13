@@ -7,13 +7,13 @@ export default function Home() {
   return <div className="m-8">
     <h1 className="text-2xl font-bold">Add more mermaid diagrams!</h1>
     <p>Simply add more .mmd files to the public folder, and push it to the repo to see the action <em>in action!</em></p>
-    <div className="grid grid-cols-2 gap-0 justify-items-center bg-red-500/10">
+    <div className="grid grid-cols-3 grid-rows-2 border-dashed border-2 my-4 gap-4 justify-between justify-items-center bg-gray-400">
 
     {
       mermaid_files.map((file)=>{
         if (file.endsWith("mmd")){
           return (
-          <div key={file} className="border-4 border-solid">
+          <div key={file} className="border-4 border-solid w-100">
             <MermaidDiagram chart={file.replace(".mmd", "")} key={file}/>
             </div>)
         }

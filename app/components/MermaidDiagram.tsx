@@ -10,7 +10,7 @@ export async function MermaidDiagram({chart}: {chart: string}){
         MermaidDiagram = <ClientMermaid chart={chart_content}/>
     }
     else if (process.env.NODE_ENV == "production") {
-        MermaidDiagram = <Image src={`${process.env.NEXT_PUBLIC_BASE_PATH}${chart}.svg`} alt="mermaid_diagram" width={100} height={100}/>
+        MermaidDiagram = <Image src={`${process.env.NEXT_PUBLIC_BASEPATH}${chart}.svg`} alt="mermaid_diagram" width={100} height={100}/>
     }
 
     return (

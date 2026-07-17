@@ -21,33 +21,33 @@ jobs:
           sample_mmd = """
           ---
           config: 
-          theme: 'base'
-            themeVariables:
-              primaryColor: '#BB2528'
-              primaryTextColor: '#fff'
-              primaryBorderColor: '#7C0000'
-              lineColor: '#F8B229'
-              secondaryColor: '#006100'
-              tertiaryColor: '#fff'
+              theme: 'base'
+              themeVariables:
+                  primaryColor: '#BB2528'
+                  primaryTextColor: '#fff'
+                  primaryBorderColor: '#7C0000'
+                  lineColor: '#F8B229'
+                  secondaryColor: '#006100'
+                  tertiaryColor: '#fff'
           ---
 
           sequenceDiagram
+              participant Alice
+              participant Bob
+              Alice->>John: Hello John, how are you?
+              loop HealthCheck
+                  John->>John: Fight against hypochondria
+              end
+              Note right of John: Rational thoughts <br/>prevail!
+              John-->>Alice: Great!
+              John->>Bob: How about you?
+              Bob-->>John: Jolly good!
 
-          participant Alice
-          participant Bob
-
-          Alice->>John: Hello John, how are you?
-          loop HealthCheck
-          John->>John: Fight against hypochondria
-          end
-          Note right of John: Rational thoughts <br/>prevail!
-          John-->>Alice: Great!
-          John->>Bob: How about you?
-          Bob-->>John: Jolly good!
           """
           
           with open('public/sample_mmd.mmd', 'w') as file:
             print(sample_mmd, file=file)
+
         shell: python
 
       - uses: mermaid-maker/action@feat/convert_bash_snippets_to_python

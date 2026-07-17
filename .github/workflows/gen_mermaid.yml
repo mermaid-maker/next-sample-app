@@ -53,9 +53,11 @@ jobs:
         with:
           pkg_manager: pnpm
 
-      - name: erase last commit
+      - name: remove sample mmd file
         run: |
-          git config --global user.name "Github Actions CI/CD"
-          git config --global user.email johndoe@example.com
-          git reset --hard HEAD~1
-          git push --force
+          git config --global user.name ${{github.actor}}
+          git config --global user.email ${{github.actor_id}}@github_workflow.com
+          git rm public/sample.mmd
+          git add public/sample.mmd
+          git commit -m "test: remove .mmd test artifact"
+          git push

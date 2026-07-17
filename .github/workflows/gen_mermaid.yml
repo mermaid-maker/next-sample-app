@@ -48,6 +48,7 @@ jobs:
           
           with open('public/sample_mmd.mmd', 'w') as file:
             print(sample_mmd, file=file)
+        shell: python
 
       - uses: mermaid-maker/action@feat/convert_bash_snippets_to_python
         with:

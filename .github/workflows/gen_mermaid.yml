@@ -57,6 +57,6 @@ jobs:
         run: |
           git config --global user.name ${{github.actor}}
           git config --global user.email ${{github.actor_id}}@github_workflow.com
-          git rm public/sample.mmd
+          git rm public/sample.svg
           git commit -m "test: remove .mmd test artifact"
           git push

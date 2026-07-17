@@ -1,0 +1,23 @@
+name: generate mermaid diagrams
+on:
+  workflow_dispatch:
+
+permissions:
+  content: write
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - uses: actions/setup-node@main
+      - uses: pnpm/action-setup@master
+        with:
+          version: 11.13
+          cache: true
+          run_install: true
+      - uses: mermaid-maker/action@feat/convert_bash_snippets_to_python
+        with:
+          pkg_manager: pnpm
+
+

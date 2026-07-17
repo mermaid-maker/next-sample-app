@@ -44,7 +44,7 @@ jobs:
 
           """
           
-          with open('public/sample_mmd.mmd', 'w') as file:
+          with open('public/sample.mmd', 'w') as file:
             print(sample_mmd, file=file)
 
         shell: python

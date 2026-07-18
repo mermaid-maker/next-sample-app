@@ -13,8 +13,10 @@ export async function MermaidDiagram({chart}: {chart: string}){
         MermaidDiagram = <Image src={`${process.env.NEXT_PUBLIC_BASEPATH}${chart}.svg`} alt="mermaid_diagram" width={100} height={100}/>
     }
 
-    return (
-    <div>
-        {MermaidDiagram}
-    </div>)
+    return <>
+    <div className="*:w-100">
+    {MermaidDiagram}
+
+    </div>
+    </>
 }

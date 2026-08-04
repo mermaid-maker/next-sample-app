@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
   job1:
@@ -49,9 +49,12 @@ jobs:
 
         shell: python
 
-      - uses: mermaid-maker/action@feat/convert_bash_snippets_to_python
+      - uses: mermaid-maker/action@main
         with:
           pkg_manager: pnpm
+
+      - name: check file exists
+        run: cat public/sample.svg
 
       - name: remove sample mmd file
         run: |

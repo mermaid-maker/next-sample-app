@@ -49,9 +49,7 @@ jobs:
         id: restore_cache
         uses: actions/cache/restore@v6.1.0
         with:
-          path: |
-            .next/cache
-            public/*.svg
+          path: .next/cache
           # Generate a new cache whenever packages or source files change.
           key: ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}-${{ hashFiles('public/*.mmd')}}
           # If source files changed but packages didn't, rebuild from a prior cache.
@@ -65,9 +63,7 @@ jobs:
       - if: ${{steps.restore_cache.outputs.cache-hit != 'true'}}
         uses: actions/cache/save@v6.1.0
         with:
-          path: |
-            .next/cache
-            public/*.svg
+          path: .next/cache
           # Generate a new cache whenever packages or source files change.
           key: ${{steps.restore_cache.outputs.cache-primary-key}}          # If source files changed but packages didn't, rebuild from a prior cache.
       - name: Build with Next.js

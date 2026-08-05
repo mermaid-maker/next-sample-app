@@ -61,7 +61,9 @@ jobs:
         uses: mermaid-maker/action@main
         with:
           pkg_manager: pnpm
-      - run: ls public
+      - run: |
+          ls public
+          cat manifest.txt
       - name: Build with Next.js
         run: pnpm next build
       - name: Upload artifact

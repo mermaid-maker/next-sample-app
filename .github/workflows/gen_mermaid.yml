@@ -1,4 +1,5 @@
 name: generate mermaid diagrams
+description: gen a mermaid diagram for basic testing purposes
 on:
   workflow_dispatch:
 

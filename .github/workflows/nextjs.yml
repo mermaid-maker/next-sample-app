@@ -59,7 +59,7 @@ jobs:
       # - name: Setup tmate session
       #   uses: mxschmitt/action-tmate@v3
       - name: Generate mermaid diagrams
-        uses: mermaid-maker/action@main
+        uses: mermaid-maker/action@v1.0.1
         with:
           pkg_manager: pnpm
       - name: Build with Next.js

@@ -1,36 +1,17 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next Sample App With mermaid-maker/action
 
-## Getting Started
+This repo demonstrates how [mermaid-maker/action](https://github.com/mermaid-maker/action) can be integrated into your web-app.
 
-First, run the development server:
+1. The `public/*.mmd` directory contains the mermaid definition files.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+2. The `app/components` directory contains 2 components:
+  - `app/components/ClientMermaid.tsx` generates mermaid diagrams on the client for dev environments.
+  - `app/components/MermaidDiagram.tsx` checks whether the current environment is dev or prod, before choosing the rendering strategy for mermaid diagrams.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. The `.github/workflows` directory which contains 2 workflows:
+  - `.github/workflows/gen_mermaid.yml` which you can run (workflow_dispatch) to see how the action generates a test diagram
+  - `.github/workflows/nextjs.yml` deploys the app into github pages. This is the workflow that shows how `mermaid-maker/action` can be integrated into a Next app deployment. 
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feel free to fork the repo, add more mermaid definition files to the `public` directory, and see the action *in actions*!
